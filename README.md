@@ -3,7 +3,7 @@ by Tim Niklas Witte
 
 <img src="Overview.png" width="800" height="400">
 
-An diffusion model was trained on the MNIST dataset to create '0' digits.
+A diffusion model was trained on the MNIST dataset to create '0' digits.
 
 # Usage
 
