@@ -30,7 +30,8 @@ python3 CreateOverview.py
 
 
 ## Create for each denoising an image
-Run the `CreateImages.py` script. 
+Run the `CreateImages.py` script. For each denoising step, there will be an image.
+It will be stored in `./forward/X.png` where `X` is the current step number.
 
 Example
 ```
