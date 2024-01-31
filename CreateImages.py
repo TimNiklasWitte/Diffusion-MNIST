@@ -19,7 +19,7 @@ def main():
 
     for t, img in enumerate(imgs):
         plt.imshow(img[0])
-        plt.savefig(f"./results/{t}.png")
+        plt.savefig(f"./forward/{t}.png")
 if __name__ == "__main__":
     try:
         main()
