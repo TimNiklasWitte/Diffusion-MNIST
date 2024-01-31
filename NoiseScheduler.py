@@ -63,11 +63,12 @@ class NoiseScheduler:
     
     def sample(self, u_net, x):
         
+        batch_size = x.shape[0]
         imgs = []
         for t, beta in enumerate(self.beta[::-1]):
             t = self.noise_steps - t - 1
 
-            t_encoded = self.encoding_time_steps[t][:1, ...]
+            t_encoded = self.encoding_time_steps[t][:batch_size, ...]
 
             x_t_embedded = tf.concat([x, t_encoded], axis=-1)
             noise = u_net(x_t_embedded)
