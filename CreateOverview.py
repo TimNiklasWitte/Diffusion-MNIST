@@ -13,20 +13,23 @@ def main():
 
     noiseScheduler = NoiseScheduler()
 
-    fig, axs = plt.subplots(figsize=(15, 7), nrows=5, ncols=26)
+    step_interval = 25
+    num_imgs = 5
+
+    fig, axs = plt.subplots(figsize=(15, 7), nrows=5, ncols= step_interval + 1)
    
-    x = tf.random.normal(shape=(5, 32,32,1))
+    x = tf.random.normal(shape=(num_imgs, 32,32,1))
 
     imgs = noiseScheduler.sample(u_net, x)
 
-    for t in range(26):
-        time_step = t*10
+    for t in range(step_interval + 1):
+        time_step = t*int(250/step_interval)
         if time_step == 250:
             time_step = 249
         
         img = imgs[time_step]
 
-        for batch_idx in range(5):
+        for batch_idx in range(num_imgs):
             axs[batch_idx, t].imshow(img[batch_idx])
 
             axs[batch_idx, t].axis("off")
